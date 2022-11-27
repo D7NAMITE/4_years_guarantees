@@ -1,20 +1,16 @@
 {
     "Boom": {
         "name": "Boom",
-        "hp": 170,
-        "highest_hp": 170,
-        "atk": 55,
-        "coin": 1000,
+        "hp": 200,
+        "highest_hp": 200,
+        "atk": 73,
+        "coin": 850,
         "year": 1,
-        "sp_move": []
-    },
-    "Yee": {
-        "name": "Yee",
-        "hp": 100,
-        "highest_hp": 100,
-        "atk": 10,
-        "coin": 0,
-        "year": 0,
-        "sp_move": []
+        "sp_move": [
+            "A Cup of StrongBugs Coffee",
+            "Wish Me Luck",
+            "Grinding All Night",
+            "Revision Sheet"
+        ]
     }
 }

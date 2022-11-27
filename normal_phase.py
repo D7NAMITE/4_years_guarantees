@@ -100,7 +100,7 @@ class SkillStore:
         self.__game_script = game_script
         with open('skill_info.json', 'r') as skill_file:
             self.__skill_info = json.load(skill_file)
-        self.__skill_lst = [skill for skill in self.__skill_info]
+        self.__skill_lst = [skill for skill in self.__skill_info if skill not in self.__player.sp_move]
 
     def store_interface(self):
         if self.__player.year == 0:
@@ -118,17 +118,19 @@ class SkillStore:
                         time.sleep(0.75)
                 except IndexError:
                     continue
-
             print('\nInput [AnyKey] to continue')
             input(' : ')
         os.system('cls')
 
         while True:
             if len(self.__skill_lst) == 0:
+                typeprint(f'You have bought all skills\n')
+                time.sleep(2)
                 break
             print('_______________| Skill Store |_______________')
             print(f'\n{"Skill Points: " + str(self.__player.coin):^45}')
             print('_____________________________________________')
+            print()
             print('Input [number] of the skill to buy')
             print('Input [x] to exit the store')
             order = 1
