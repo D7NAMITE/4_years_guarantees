@@ -1,8 +1,8 @@
 {
     "Boom": {
         "name": "Boom",
-        "hp": 200,
-        "highest_hp": 200,
+        "hp": 220,
+        "highest_hp": 220,
         "atk": 73,
         "coin": 850,
         "year": 1,
@@ -12,5 +12,14 @@
             "Grinding All Night",
             "Revision Sheet"
         ]
+    },
+    "Unknown Player": {
+        "name": "Unknown Player",
+        "hp": 100,
+        "highest_hp": 100,
+        "atk": 10,
+        "coin": 10,
+        "year": 0,
+        "sp_move": []
     }
 }

@@ -136,8 +136,8 @@ class Player:
         return f'Name : {self.__name}\n' \
                f'Year : {self.__year}\n' \
                f' >> Intelligent Damage : {self.__atk}\n' \
-               f' >> Mental Stability :{self.__hp}/{self.__highest_hp}\n' \
-               f'    {self.__hp_gauge}\n' \
+               f' >> Mental Stability :\n' \
+               f'    {self.__hp_gauge} {self.__hp}/{self.__highest_hp}\n' \
                f' >> Skill Points : {self.__coin}\n' \
                f' >> Special Move : {self.sp_move}'
 

@@ -48,13 +48,13 @@ class Fight:
         turn = 0
         while True:
             turn += 1
-            print(f' = Turn: {turn} =')
+            print(f'Turn: {turn}')
             print('------------------------------------------------------------\n')
-            print('-| 4-year-er |-')
-            print(self.__player)
-            print('\n========================= VS ===========================\n')
             print('-| Hostile |-')
             print(self.__enemy)
+            print('\n========================= VS ===========================\n')
+            print('-| 4-year-er |-')
+            print(self.__player)
             print('\n------------------------------------------------------------')
             print('Input [O] to perform an ordinary attack')
             print('Input [S] to perform a special move')
