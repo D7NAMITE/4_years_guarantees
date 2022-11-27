@@ -118,7 +118,7 @@ class SkillStore:
                         time.sleep(0.75)
                 except IndexError:
                     continue
-            print('\nInput [AnyKey] to continue')
+            print('\nInput [Any Key] to continue')
             input(' : ')
         os.system('cls')
 

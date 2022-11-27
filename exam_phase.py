@@ -41,8 +41,8 @@ class Fight:
                         time.sleep(0.75)
                 except IndexError:
                     continue
-            print('\nInput [AnyKey] to continue')
-            input_continue = input(' : ')
+            print('\nInput [Any Key] to continue')
+            input(' : ')
         os.system('cls')
 
         turn = 0

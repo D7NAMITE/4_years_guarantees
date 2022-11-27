@@ -181,7 +181,7 @@ class GameSaveManager:
                                 player_info['sp_move'])
                 self.__player = player
                 print(player)
-                print('\nInput [AnyKey] to continue')
+                print('\nInput [Any Key] to continue')
                 input(' : ')
                 os.system('cls')
                 return self.__player
