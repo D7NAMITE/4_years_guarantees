@@ -50,7 +50,7 @@ class Gauge:
 
 class Player:
     def __init__(self, name: str = 'Unknown Player', hp: float = 100, highest_hp: float = 100,
-                 atk: float = 10, coin: float = 0, year: str = 0, item=None):
+                 atk: float = 10, coin: float = 0, year: str = 0):
         self.__name = name
         self.__hp = hp
         self.__atk = atk

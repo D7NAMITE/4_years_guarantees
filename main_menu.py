@@ -180,7 +180,7 @@ class GameSaveManager:
                 self.__player = player
                 print(player)
                 print('\nInput [AnyKey] to continue')
-                input_continue = input(' : ')
+                input(' : ')
                 os.system('cls')
                 return self.__player
             else:

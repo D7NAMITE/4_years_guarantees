@@ -60,13 +60,13 @@ class Upgrade:
                 except IndexError:
                     continue
             print('\nInput [AnyKey] to continue')
-            input_continue = input(' : ')
+            input(' : ')
         os.system('cls')
 
         while True:
             print('_____________| Spend Some Time |_____________')
             print()
-            print(f'{"Time Period: "+str(self.__time_pt):^45}')
+            print(f'{"Time Period: " + str(self.__time_pt):^45}')
             print('_____________________________________________')
             print()
             print('Input [R] to rest')

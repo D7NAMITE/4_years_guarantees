@@ -1,9 +1,9 @@
 {
     "Boom": {
         "name": "Boom",
-        "hp": 145,
-        "highest_hp": 145,
-        "atk": 34,
+        "hp": 150,
+        "highest_hp": 150,
+        "atk": 43,
         "coin": 1000,
         "year": 1
     },
