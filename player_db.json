@@ -1,0 +1,18 @@
+{
+    "Boom": {
+        "name": "Boom",
+        "hp": 145,
+        "highest_hp": 145,
+        "atk": 34,
+        "coin": 1000,
+        "year": 1
+    },
+    "Yee": {
+        "name": "Yee",
+        "hp": 100,
+        "highest_hp": 100,
+        "atk": 10,
+        "coin": 0,
+        "year": 0
+    }
+}

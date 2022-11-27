@@ -1,0 +1,9 @@
+{
+    "Knowledge of the Land": {
+        "name": "Knowledge of the Land",
+        "hp": 100,
+        "highest_hp": 100,
+        "atk": 10,
+        "year": 0
+    }
+}
