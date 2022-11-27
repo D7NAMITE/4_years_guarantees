@@ -1,6 +1,6 @@
 import os
 import time
-
+from character import Player, Enemy
 from main_menu import typeprint
 
 
@@ -25,7 +25,7 @@ class Fight:
     def enemy(self, new_enemy):
         self.__enemy = new_enemy
 
-    def fight_interface(self):
+    def fight_runner(self):
         if self.__player.year == 0:
             with open('game_script.csv') as script_file:
                 script = []
@@ -45,3 +45,20 @@ class Fight:
             input_continue = input(' : ')
         os.system('cls')
 
+        turn = 0
+        while True:
+            turn += 1
+            print(f' = Turn: {turn} =')
+            print('------------------------------------------------------------\n')
+            print('-| 4-year-er |-')
+            print(self.__player)
+            print('\n========================= VS ===========================\n')
+            print('-| Hostile |-')
+            print(self.__enemy)
+            print('\n------------------------------------------------------------')
+            print('Input [O] to perform an ordinary attack')
+            print('Input [S] to perform a special move')
+            player_action = input(' : ')
+
+
+Fight(Player(), Enemy()).fight_runner()
