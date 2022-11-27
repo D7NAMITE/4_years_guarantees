@@ -50,7 +50,7 @@ class Gauge:
 
 class Player:
     def __init__(self, name: str = 'Unknown Player', hp: float = 100, highest_hp: float = 100,
-                 atk: float = 10, coin: float = 0, year: str = 0):
+                 atk: float = 10, coin: float = 10, year: str = 0, sp_move=[]):
         self.__name = name
         self.__hp = hp
         self.__atk = atk
@@ -58,7 +58,7 @@ class Player:
         self.__coin = coin
         self.__hp_gauge = Gauge(self.__hp, self.__highest_hp)
         self.__year = year
-
+        self.__sp_move = sp_move
     @property
     def name(self):
         return self.__name
@@ -124,13 +124,22 @@ class Player:
     def year(self, new_year):
         self.__year = new_year
 
+    @property
+    def sp_move(self):
+        return self.__sp_move
+
+    @sp_move.setter
+    def sp_move(self, new_sp_move):
+        self.__sp_move = new_sp_move
+
     def __str__(self):
         return f'Name : {self.__name}\n' \
                f'Year : {self.__year}\n' \
                f' >> Intelligent Damage : {self.__atk}\n' \
                f' >> Mental Stability :{self.__hp}/{self.__highest_hp}\n' \
                f'    {self.__hp_gauge}\n' \
-               f' >> Skill Points : {self.__coin}'
+               f' >> Skill Points : {self.__coin}\n' \
+               f' >> Special Move : {self.sp_move}'
 
 
 class Enemy:

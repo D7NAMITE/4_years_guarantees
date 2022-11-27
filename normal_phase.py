@@ -53,7 +53,7 @@ class Upgrade:
                         script += [item.split(',')]
             for i in script:
                 try:
-                    if i[1] == 'normal_phase_explain':
+                    if i[1] == 'upgrade_explain':
                         dialogue = i[0]
                         typeprint(f' {dialogue}')
                         time.sleep(0.75)
@@ -64,7 +64,7 @@ class Upgrade:
         os.system('cls')
 
         while True:
-            print('_____________| Spend Some Time |_____________')
+            print('_____________| Time Management |_____________')
             print()
             print(f'{"Time Period: " + str(self.__time_pt):^45}')
             print('_____________________________________________')
@@ -86,8 +86,104 @@ class Upgrade:
             if self.__time_pt == 0:
                 os.system('cls')
                 print(self.__player)
-                GameSaveManager().save_game(self.__player)
                 time.sleep(1)
-                print('Auto saved')
-                time.sleep(2)
+                print('\nInput [AnyKey] to continue')
+                input(' : ')
+                os.system('cls')
+                return self.__player
+
+
+class SkillStore:
+    def __init__(self, player, player_db='player_db.json', game_script='game_script.csv'):
+        self.__player = player
+        self.__player_db = player_db
+        self.__game_script = game_script
+        with open('skill_info.json', 'r') as skill_file:
+            self.__skill_info = json.load(skill_file)
+        self.__skill_lst = [skill for skill in self.__skill_info]
+
+    def store_interface(self):
+        if self.__player.year == 0:
+            with open(self.__game_script) as script_file:
+                script = []
+                for row in script_file:
+                    raw = row.splitlines()
+                    for item in raw:
+                        script += [item.split(',')]
+            for i in script:
+                try:
+                    if i[1] == 'skill_store_explain':
+                        dialogue = i[0]
+                        typeprint(f' {dialogue}')
+                        time.sleep(0.75)
+                except IndexError:
+                    continue
+
+            print('\nInput [AnyKey] to continue')
+            input(' : ')
+        os.system('cls')
+
+        while True:
+            if len(self.__skill_lst) == 0:
                 break
+            print('_______________| Skill Store |_______________')
+            print(f'\n{"Skill Points: " + str(self.__player.coin):^45}')
+            print('_____________________________________________')
+            print('Input [number] of the skill to buy')
+            print('Input [x] to exit the store')
+            order = 1
+            for skill in self.__skill_info:
+                if skill in self.__skill_lst:
+                    print()
+                    print(f'[{order}] {self.__skill_info[skill]["name"]} | '
+                          f'{self.__skill_info[skill]["cost"]} Skill Points')
+                    print(f' >>> {self.__skill_info[skill]["effect"]} - '
+                          f'{self.__skill_info[skill]["description"]}')
+                    print()
+                    order += 1
+            stop_or_not = self.skill_buying()
+            if stop_or_not:
+                os.system('cls')
+                break
+            os.system('cls')
+        return self.__player
+
+    def skill_buying(self):
+        print('==============================================')
+        print('[Input here]')
+        buy_decision = input(' : ')
+        try:
+            int(buy_decision)
+        except ValueError:
+            if buy_decision == 'x':
+                return True
+            else:
+                for sec in range(3, 0, -1):
+                    os.system('cls')
+                    print('[Wrong input]')
+                    print(f'Try again in {sec} sec')
+                    time.sleep(1)
+                os.system('cls')
+        else:
+            if int(buy_decision) in range(1, len(self.__skill_lst)+1):
+                price = self.__skill_info[self.__skill_lst[int(buy_decision) - 1]]["cost"]
+                if self.__player.coin < price:
+                    for sec in range(3, 0, -1):
+                        os.system('cls')
+                        print('[Not enough money]')
+                        print(f'Try again in {sec} sec')
+                        time.sleep(1)
+                    os.system('cls')
+                else:
+                    self.__player.sp_move += [self.__skill_lst[int(buy_decision)-1]]
+                    self.__player.coin -= price
+                    bought = self.__skill_lst.pop(int(buy_decision)-1)
+                    print(f'[You have bought {bought}]')
+                    time.sleep(1)
+            else:
+                for sec in range(3, 0, -1):
+                    os.system('cls')
+                    print('[Wrong input]')
+                    print(f'Try again in {sec} sec')
+                    time.sleep(1)
+                os.system('cls')

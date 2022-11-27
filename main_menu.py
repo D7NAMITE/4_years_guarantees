@@ -156,7 +156,8 @@ class GameSaveManager:
                         "highest_hp": 100,
                         "atk": 10,
                         "coin": 0,
-                        "year": 0
+                        "year": 0,
+                        "sp_move": []
                     }
                 }
                 player = Player(new_name)
@@ -176,7 +177,8 @@ class GameSaveManager:
                 typeprint(f'Welcome back "{load_name}" the 4-years-er\n')
                 player_info = self.__player_db_dict[load_name]
                 player = Player(player_info['name'], player_info['hp'], player_info['highest_hp'],
-                                player_info['atk'], player_info['coin'], player_info['year'],)
+                                player_info['atk'], player_info['coin'], player_info['year'],
+                                player_info['sp_move'])
                 self.__player = player
                 print(player)
                 print('\nInput [AnyKey] to continue')
@@ -199,7 +201,8 @@ class GameSaveManager:
                 "highest_hp": player.highest_hp,
                 "atk": player.atk,
                 "coin": player.coin,
-                "year": player.year
+                "year": player.year,
+                "sp_move": player.sp_move
             }
         }
         self.__player_db_dict.update(saving_player_info)
