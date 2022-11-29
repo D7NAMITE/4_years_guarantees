@@ -148,6 +148,11 @@ class SkillStore:
                 os.system('cls')
                 break
             os.system('cls')
+        print(self.__player)
+        time.sleep(1)
+        print('\nInput [AnyKey] to continue')
+        input(' : ')
+        os.system('cls')
         return self.__player
 
     def skill_buying(self):

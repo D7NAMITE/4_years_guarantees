@@ -2,14 +2,14 @@
     "A Cup of StrongBugs Coffee": {
         "name": "A Cup of StrongBugs Coffee",
         "cost": 10,
-        "effect": "+10 HP heal",
+        "effect": "+20 HP heal",
         "description": "A single cup of premium coffee might revive a dead soul back from dead."
     },
     "Revision Sheet": {
         "name": "Revision Sheet",
         "cost": 30,
-        "effect": "+20% to the damage a turn later",
-        "description": "The material everyone need! Straight on point and dependable!"
+        "effect": "+50% chances of getting 30 HP from enemy",
+        "description": "Mock and guess, what will be in the test?"
     },
     "Grinding All Night": {
         "name": "Grinding All Night",
@@ -20,7 +20,7 @@
     "Wish Me Luck": {
         "name": "Wish Me Luck",
         "cost": 50,
-        "effect": "20% chance 100 Damage to enemy, 80% chance +20% to intake Damage",
+        "effect": "20% chance 100 Damage to enemy, 80% chance +20% to intake 75 Damage",
         "description": "Let's hope that today is my lucky day..."
     }
 }

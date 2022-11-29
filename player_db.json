@@ -3,7 +3,7 @@
         "name": "Boom",
         "hp": 220,
         "highest_hp": 220,
-        "atk": 73,
+        "atk": 25,
         "coin": 850,
         "year": 1,
         "sp_move": [
@@ -13,13 +13,16 @@
             "Revision Sheet"
         ]
     },
-    "Unknown Player": {
-        "name": "Unknown Player",
-        "hp": 100,
-        "highest_hp": 100,
-        "atk": 10,
-        "coin": 10,
-        "year": 0,
-        "sp_move": []
+    "Drew": {
+        "name": "Drew",
+        "hp": 35,
+        "highest_hp": 130,
+        "atk": 28,
+        "coin": 30,
+        "year": 3,
+        "sp_move": [
+            "A Cup of StrongBugs Coffee",
+            "Revision Sheet"
+        ]
     }
 }

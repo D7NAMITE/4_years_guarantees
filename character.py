@@ -50,7 +50,7 @@ class Gauge:
 
 class Player:
     def __init__(self, name: str = 'Unknown Player', hp: float = 100, highest_hp: float = 100,
-                 atk: float = 10, coin: float = 10, year: str = 0, sp_move=[]):
+                 atk: float = 10, coin: float = 10, year: int = 0, sp_move=[]):
         self.__name = name
         self.__hp = hp
         self.__atk = atk
@@ -137,20 +137,22 @@ class Player:
                f'Year : {self.__year}\n' \
                f' >> Intelligent Damage : {self.__atk}\n' \
                f' >> Mental Stability :\n' \
-               f'    {self.__hp_gauge} {self.__hp}/{self.__highest_hp}\n' \
+               f'    {self.__hp_gauge} {self.__hp:.0f}/{self.__highest_hp}\n' \
                f' >> Skill Points : {self.__coin}\n' \
                f' >> Special Move : {self.sp_move}'
 
 
 class Enemy:
     def __init__(self, name: str = 'Unknown Hostile', hp: float = 100, highest_hp: float = 100,
-                 atk: float = 10, year: str = 0):
+                 atk: float = 10, year: int = 0, heal_per_round=15, drop_coin=10):
         self.__name = name
         self.__hp = hp
         self.__atk = atk
         self.__highest_hp = highest_hp
         self.__hp_gauge = Gauge(self.__hp, self.__highest_hp)
         self.__year = year
+        self.__heal_per_round = heal_per_round
+        self.drop_coin = drop_coin
 
     @property
     def name(self):
@@ -200,8 +202,25 @@ class Enemy:
         else:
             self.__highest_hp = new_highest_hp
 
+    @property
+    def heal_per_round(self):
+        return self.__heal_per_round
+
+    @heal_per_round.setter
+    def heal_per_round(self, new_heal_per_round):
+        self.__heal_per_round = new_heal_per_round
+
+    @property
+    def drop_coin(self):
+        return self.__drop_coin
+
+    @drop_coin.setter
+    def drop_coin(self, new_drop_coin):
+        self.__drop_coin = new_drop_coin
+
     def __str__(self):
         return f'Name : {self.__name}\n' \
+               f'Year : {self.__year}\n' \
                f' >> Intelligent Damage : {self.__atk}\n' \
                f' >> Mental Stability :\n' \
-               f'   {self.__hp_gauge} {self.__hp}/{self.__highest_hp}\n'
+               f'   {self.__hp_gauge} {self.__hp:.0f}/{self.__highest_hp}\n'

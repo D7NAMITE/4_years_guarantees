@@ -1,4 +1,6 @@
+import json
 import os
+import random
 import time
 from character import Player, Enemy
 from main_menu import typeprint
@@ -8,6 +10,9 @@ class Fight:
     def __init__(self, player, enemy):
         self.__player = player
         self.__enemy = enemy
+        with open('skill_info.json', 'r') as skill_file:
+            self.__skill_info = json.load(skill_file)
+        self.__enemy_buff = 0
 
     @property
     def player(self):
@@ -25,7 +30,7 @@ class Fight:
     def enemy(self, new_enemy):
         self.__enemy = new_enemy
 
-    def fight_runner(self):
+    def fight_interface(self):
         if self.__player.year == 0:
             with open('game_script.csv') as script_file:
                 script = []
@@ -44,10 +49,10 @@ class Fight:
             print('\nInput [Any Key] to continue')
             input(' : ')
         os.system('cls')
+        os.system('mode con: cols=130 lines=55')
 
-        turn = 0
+        turn = 1
         while True:
-            turn += 1
             print(f'Turn: {turn}')
             print('------------------------------------------------------------\n')
             print('-| Hostile |-')
@@ -56,9 +61,145 @@ class Fight:
             print('-| 4-year-er |-')
             print(self.__player)
             print('\n------------------------------------------------------------')
-            print('Input [O] to perform an ordinary attack')
-            print('Input [S] to perform a special move')
-            player_action = input(' : ')
+            print('| Player Move |\n')
+            print('Input [A] to perform an ordinary attack')
+            order = 1
+            for skill in self.__player.sp_move:
+                print()
+                print(f'Input [{order}] {self.__skill_info[skill]["name"]}')
+                print(
+                    f' >>> {self.__skill_info[skill]["effect"]} - {self.__skill_info[skill]["description"]}')
+                print()
+                order += 1
+            print('============================================================')
+            print(f'[{self.__player.name} Turn]')
+            wrong_input = self.player_action()
+            if wrong_input:
+                continue
+            if self.__enemy.hp <= 0:
+                os.system('cls')
+                print(f'[Congratulation you have defeat {self.__enemy.name}]')
+                self.__player.coin += self.__enemy.drop_coin
+                print(f'Reward: {self.__enemy.drop_coin} coin')
+                print()
+                print(self.__player)
+                print()
+                print('Enter [Any Key]')
+                input(' : ')
+                os.system('cls')
+                return self.__player
+            print('============================================================')
+            print(f'[{self.__enemy.name} Turn]')
+            time.sleep(2)
+            self.enemy_action()
+            if self.__player.hp <= 0:
+                os.system('cls')
+                print('''
+    ░██████╗░░█████╗░███╗░░░███╗███████╗        ░█████╗░██╗░░░██╗███████╗██████╗
+    ██╔════╝░██╔══██╗████╗░████║██╔════╝        ██╔══██╗██║░░░██║██╔════╝██╔══██╗
+    ██║░░██╗░███████║██╔████╔██║█████╗░░        ██║░░██║╚██╗░██╔╝█████╗░░██████╔╝
+    ██║░░╚██╗██╔══██║██║╚██╔╝██║██╔══╝░░        ██║░░██║░╚████╔╝░██╔══╝░░██╔══██╗
+    ╚██████╔╝██║░░██║██║░╚═╝░██║███████╗        ╚█████╔╝░░╚██╔╝░░███████╗██║░░██║
+    ░╚═════╝░╚═╝░░╚═╝╚═╝░░░░░╚═╝╚══════╝        ░╚════╝░░░░╚═╝░░░╚══════╝╚═╝░░╚═╝''')
+                print('Enter [Any Key] to exit')
+                input(' : ')
+                return 'GameOver'
+            time.sleep(2)
+            turn += 1
+            print('============================================================')
+            print('\nInput [Any Key] to start the Next turn')
+            input(' : ')
+            os.system('cls')
 
+    def player_action(self):
+        while True:
+            print('[Input here]')
+            player_decision = input(' : ')
+            try:
+                int(player_decision)
+            except ValueError:
+                if player_decision.lower() == 'a':
+                    self.player_attack()
+                    print(f'[Ordinary Attack]')
+                    time.sleep(1)
+                    return False
+                else:
+                    for sec in range(3, 0, -1):
+                        os.system('cls')
+                        print('[Wrong input]')
+                        print(f'Try again in {sec} sec')
+                        time.sleep(1)
+                    os.system('cls')
+                    return True
+            else:
+                if int(player_decision) in range(1, len(self.__player.sp_move) + 1):
+                    skill_using = self.__player.sp_move[int(player_decision) - 1]
+                    print(f'[Special Move : {skill_using}]')
+                    self.special_move_perform(skill_using)
+                    time.sleep(1)
+                    return False
+                else:
+                    for sec in range(3, 0, -1):
+                        os.system('cls')
+                        print('[Wrong input]')
+                        print(f'Try again in {sec} sec')
+                        time.sleep(1)
+                    os.system('cls')
+                    return True
 
-Fight(Player(), Enemy()).fight_runner()
+    def special_move_perform(self, skill_using):
+        if skill_using == 'A Cup of StrongBugs Coffee':
+            self.__player.hp += 20
+            print(f'+20 HP Mental Stability to {self.__player.name}')
+        elif skill_using == 'Revision Sheet':
+            review_rate = random.randint(1, 2)
+            if review_rate == 1:
+                self.__enemy.hp -= 30
+                self.__player.hp += 30
+                print("This is I just wrote on the revision")
+            else:
+                print("Oh no! I didn't have this on my revision sheet...")
+
+        elif skill_using == 'Grinding All Night':
+            self.__player.hp -= 25
+            self.__enemy.hp -= 75
+            print(f'-20 HP Mental Stability for {self.__player.name}')
+            print(f'75 Damage to {self.__enemy.name}')
+        elif skill_using == 'Wish Me Luck':
+            luck_rate = random.randint(1, 100)
+            if luck_rate >= 30:
+                self.__player.hp -= 25
+                print('No luck...')
+                print(f'25 Damage to {self.__player.name}')
+            else:
+                print('Gotcha!!')
+                print(f'75 Damage to {self.__enemy.name}')
+                self.__enemy.hp -= 100
+
+    def player_attack(self, buff_percent=0):
+        crit_dmg = 0
+        crit_chance = random.randint(1, 100)
+        if crit_chance >= 85:
+            crit_dmg = 10
+            print(f'+{crit_dmg} Critical Damage!')
+        pure_dmg = self.__player.atk + crit_dmg
+        full_dmg = pure_dmg + (pure_dmg * (buff_percent / 100))
+        print(f'{full_dmg:.0f} Damage to {self.__enemy.name}!')
+        self.__enemy.hp -= full_dmg
+
+    def enemy_action(self):
+        hp_percentage = (self.__enemy.hp / self.__enemy.highest_hp) * 100
+        if hp_percentage < 45:
+            heal_rate = random.randint(1, 100)
+            if heal_rate >= 85:
+                self.__enemy.hp += self.__enemy.heal_per_round
+                print(f'{self.__enemy.name} heal for {self.__enemy.heal_per_round} hp')
+            else:
+                self.enemy_attack()
+        else:
+            self.enemy_attack()
+
+    def enemy_attack(self):
+        dmg = self.__enemy.atk + self.__enemy_buff
+        self.__player.hp -= dmg
+        print(f'{self.__enemy.name} makes {dmg} Damage')

@@ -1,9 +1,47 @@
 {
-    "Knowledge of the Land": {
+    "Year 0": {
         "name": "Knowledge of the Land",
-        "hp": 100,
-        "highest_hp": 100,
-        "atk": 10,
-        "year": 0
+        "hp": 50,
+        "atk": 5,
+        "highest_hp": 50,
+        "year": 0,
+        "heal_per_round": 5,
+        "drop_coin": 10
+    },
+    "Year 1": {
+        "name": "Computer Programming",
+        "hp": 200,
+        "atk": 15,
+        "highest_hp": 200,
+        "year": 1,
+        "heal_per_round": 15,
+        "drop_coin": 20
+    },
+    "Year 2": {
+        "name": "Data Structure & Algorithms",
+        "hp": 200,
+        "atk": 25,
+        "highest_hp": 200,
+        "year": 2,
+        "heal_per_round": 25,
+        "drop_coin": 30
+    },
+    "Year 3": {
+        "name": "",
+        "hp": 300,
+        "atk": 25,
+        "highest_hp": 300,
+        "year": 3,
+        "heal_per_round": 15,
+        "drop_coin": 50
+    },
+    "Year 4": {
+        "name": "Co-operative Education",
+        "hp": 500,
+        "atk": 15,
+        "highest_hp": 500,
+        "year": 4,
+        "heal_per_round": 10,
+        "drop_coin": 1000
     }
 }

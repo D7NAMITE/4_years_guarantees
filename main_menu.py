@@ -208,3 +208,6 @@ class GameSaveManager:
         self.__player_db_dict.update(saving_player_info)
         with open('player_db.json', 'w') as player_file:
             json.dump(self.__player_db_dict, player_file, indent=4)
+        print('[Auto Saved]')
+        print('Input [Any Key] to continue')
+        input(' : ')
