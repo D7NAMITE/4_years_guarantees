@@ -37,5 +37,14 @@
             "Revision Sheet",
             "Grinding All Night"
         ]
+    },
+    "Ryu": {
+        "name": "Ryu",
+        "hp": 100,
+        "highest_hp": 100,
+        "atk": 10,
+        "coin": 0,
+        "year": 0,
+        "sp_move": []
     }
 }
