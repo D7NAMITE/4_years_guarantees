@@ -46,5 +46,14 @@
         "coin": 0,
         "year": 0,
         "sp_move": []
+    },
+    "Booooo": {
+        "name": "Booooo",
+        "hp": 100,
+        "highest_hp": 100,
+        "atk": 10,
+        "coin": 0,
+        "year": 0,
+        "sp_move": []
     }
 }

@@ -88,7 +88,7 @@ class Fight:
                 os.system('cls')
                 print(f'[Congratulation you have defeat {self.__enemy.name}]')
                 self.__player.coin += self.__enemy.drop_coin
-                print(f'Reward: {self.__enemy.drop_coin} coin')
+                print(f'Reward: {self.__enemy.drop_coin} Skill Points')
                 print()
                 print(self.__player)
                 print()
