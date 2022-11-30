@@ -2,18 +2,13 @@ import math
 
 
 class Gauge:
+    """ The Gauge class is function as a 'Graphic' meter of the particular value.
+    In the game the gauge will use for showing the player and enemy HP status.
+    """
     def __init__(self, mag: float, highest: float, cap: float = 20):
         self.__mag = mag
         self.__highest = highest
         self.__cap = cap
-
-    def gauge_calculate(self):
-        if 0 <= self.__mag <= self.__highest:
-            return (self.__mag / self.__highest) * self.__cap
-        elif self.__mag > self.__highest:
-            return self.__cap
-        elif self.__mag < 0:
-            return 0
 
     @property
     def mag(self):
@@ -44,11 +39,23 @@ class Gauge:
     def cap(self, new_line_cap):
         self.__cap = new_line_cap
 
+    def gauge_calculate(self):
+        """ This method will calculate the needed amount of 'Block' display.
+        """
+        if 0 <= self.__mag <= self.__highest:
+            return (self.__mag / self.__highest) * self.__cap
+        elif self.__mag > self.__highest:
+            return self.__cap
+        elif self.__mag < 0:
+            return 0
+
     def __str__(self):
         return f'[{"■" * math.ceil(self.gauge_calculate()) + ("□" * math.ceil(self.__cap - self.gauge_calculate()))}]'
 
 
 class Player:
+    """ The player class is the class that will contain and manipulate the player attributes
+    """
     def __init__(self, name: str = 'Unknown Player', hp: float = 100, highest_hp: float = 100,
                  atk: float = 10, coin: float = 10, year: int = 0, sp_move=[]):
         self.__name = name
@@ -144,6 +151,8 @@ class Player:
 
 
 class Enemy:
+    """ The enemy class is the class that will contain and manipulate the enemy attributes
+        """
     def __init__(self, name: str = 'Unknown Hostile', hp: float = 100, highest_hp: float = 100,
                  atk: float = 10, year: int = 0, heal_per_round=15, drop_coin=10):
         self.__name = name
