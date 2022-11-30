@@ -5,44 +5,18 @@ from main_menu import typeprint
 
 
 class Upgrade:
-    def __init__(self, player, player_db='player_db.json', game_script='game_script.csv',
-                 time_pt=5):
+    """ The Upgrade class will manipulate and display the player attribute upgrading
+    """
+    def __init__(self, player, player_db='player_db.json', game_script='game_script.csv', time_pt=5):
         self.__player = player
         self.__player_db = player_db
         self.__game_script = game_script
         self.__time_pt = time_pt
 
-    def attribute_upgrade(self):
-        print('=============================================')
-        print('[Input here]')
-        upgrade_selection = input(' : ')
-        if upgrade_selection.lower() == 'r':
-            self.__player.highest_hp += 5
-            self.__time_pt -= 1
-            print('[+5 Mental Stability]')
-            time.sleep(0.5)
-            os.system('cls')
-        elif upgrade_selection.lower() == 's':
-            self.__player.atk += 3
-            self.__time_pt -= 1
-            print('[+3 Intelligent Damage]')
-            time.sleep(0.5)
-            os.system('cls')
-        elif upgrade_selection.lower() == 'h':
-            self.__player.hp = self.__player.highest_hp
-            self.__time_pt -= 1
-            print('[Fully-Heal Mental Stability]')
-            time.sleep(0.5)
-            os.system('cls')
-        else:
-            for sec in range(3, 0, -1):
-                os.system('cls')
-                print('[Wrong input]')
-                print(f'Try again in {sec} sec')
-                time.sleep(1)
-            os.system('cls')
-
     def upgrade_interface(self):
+        """This method will display the upgrading process.
+        It's also contained the Upgrading tutorial
+        """
         if self.__player.year == 0:
             with open(self.__game_script) as script_file:
                 script = []
@@ -91,8 +65,42 @@ class Upgrade:
                 os.system('cls')
                 return self.__player
 
+    def attribute_upgrade(self):
+        """ This method will display and manipulate if player upgrade any attribute
+        """
+        print('=============================================')
+        print('[Input here]')
+        upgrade_selection = input(' : ')
+        if upgrade_selection.lower() == 'r':
+            self.__player.highest_hp += 5
+            self.__time_pt -= 1
+            print('[+5 Mental Stability]')
+            time.sleep(0.5)
+            os.system('cls')
+        elif upgrade_selection.lower() == 's':
+            self.__player.atk += 3
+            self.__time_pt -= 1
+            print('[+3 Intelligent Damage]')
+            time.sleep(0.5)
+            os.system('cls')
+        elif upgrade_selection.lower() == 'h':
+            self.__player.hp = self.__player.highest_hp
+            self.__time_pt -= 1
+            print('[Fully-Heal Mental Stability]')
+            time.sleep(0.5)
+            os.system('cls')
+        else:
+            for sec in range(3, 0, -1):
+                os.system('cls')
+                print('[Wrong input]')
+                print(f'Try again in {sec} sec')
+                time.sleep(1)
+            os.system('cls')
+
 
 class SkillStore:
+    """ The SkillStore class will manipulate and display the skill buying process
+    """
     def __init__(self, player, player_db='player_db.json', game_script='game_script.csv'):
         self.__player = player
         self.__player_db = player_db
@@ -102,6 +110,9 @@ class SkillStore:
         self.__skill_lst = [skill for skill in self.__skill_info if skill not in self.__player.sp_move]
 
     def store_interface(self):
+        """This method will display the skill buying process.
+        It's also contained the skill buying tutorial
+        """
         if self.__player.year == 0:
             with open(self.__game_script) as script_file:
                 script = []
@@ -155,6 +166,8 @@ class SkillStore:
         return self.__player
 
     def skill_buying(self):
+        """ This method will display and manipulate if player buy any skill.
+        """
         print('==============================================')
         print('[Input here]')
         buy_decision = input(' : ')
