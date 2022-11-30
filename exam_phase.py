@@ -134,7 +134,7 @@ class Fight:
             except ValueError:
                 if player_decision.lower() == 'a':
                     self.player_attack()
-                    print(f'[Ordinary Attack]')
+                    print('[Ordinary Attack]')
                     time.sleep(1)
                     return False
                 else:

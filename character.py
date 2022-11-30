@@ -59,6 +59,7 @@ class Player:
         self.__hp_gauge = Gauge(self.__hp, self.__highest_hp)
         self.__year = year
         self.__sp_move = sp_move
+
     @property
     def name(self):
         return self.__name

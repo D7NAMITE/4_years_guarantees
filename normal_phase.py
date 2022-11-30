@@ -1,8 +1,7 @@
 import json
 import os
 import time
-from character import Player
-from main_menu import typeprint, GameSaveManager
+from main_menu import typeprint
 
 
 class Upgrade:
@@ -124,7 +123,7 @@ class SkillStore:
 
         while True:
             if len(self.__skill_lst) == 0:
-                typeprint(f'You have bought all skills\n')
+                typeprint('You have bought all skills\n')
                 time.sleep(2)
                 break
             print('_______________| Skill Store |_______________')
