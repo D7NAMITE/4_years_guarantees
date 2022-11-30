@@ -6,6 +6,7 @@ from character import Player
 
 
 def typeprint(text):
+    """ The function that will create a typewriter effect"""
     for i in text:
         sys.stdout.write(i)
         sys.stdout.flush()
@@ -14,7 +15,12 @@ def typeprint(text):
 
 
 class MainMenu:
+    """ The main menu class is the class that manipulate and display a main menu part
+    """
     def __init__(self, player_db='player_db.json', game_script='game_script.csv'):
+        """ This initial method will have a try-catch to check if
+        the file player_db.json and game_script.csv have already installed or not.
+        """
         try:
             with open(player_db, 'r') as db_file:
                 player_db_dict = json.load(db_file)
@@ -42,6 +48,8 @@ class MainMenu:
             self.__file_existence = True
 
     def main_menu_interface(self):
+        """ The method that display the main menu part
+        """
         while True:
             if not self.__file_existence:
                 break
@@ -87,6 +95,9 @@ class MainMenu:
 
 
 class GameSaveManager:
+    """ The GameSaveManager class will manage the player data included create a new player,
+    load an existed player, and save a player data.
+    """
     def __init__(self, player_db='player_db.json', game_script='game_script.csv'):
         self.__player_db = player_db
         self.__game_script = game_script
@@ -95,7 +106,9 @@ class GameSaveManager:
             self.__player_db_dict = json.load(db_file)
 
     def new_game(self):
-        # Prologue
+        """ This method will create a new player data and save the data in the database.
+        It also contained  prologue part.
+        """
         while True:
             print('And now, the sacred legend shall begin...')
             print('Input [S] to skip the prologue')
@@ -168,6 +181,8 @@ class GameSaveManager:
                 return self.__player
 
     def load_game(self):
+        """ This method will load an existed player data
+        """
         while True:
             print('[To wake the sleeping holy saga, You must enter you name]')
             load_name = input(' : ')
@@ -194,6 +209,8 @@ class GameSaveManager:
                 os.system('cls')
 
     def save_game(self, player):
+        """ This method will save player data to the database.
+        """
         saving_player_info = {
             player.name: {
                 "name": player.name,
