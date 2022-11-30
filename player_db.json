@@ -5,7 +5,7 @@
         "highest_hp": 220,
         "atk": 25,
         "coin": 850,
-        "year": 1,
+        "year": 4,
         "sp_move": [
             "A Cup of StrongBugs Coffee",
             "Wish Me Luck",
@@ -23,6 +23,19 @@
         "sp_move": [
             "A Cup of StrongBugs Coffee",
             "Revision Sheet"
+        ]
+    },
+    "Nongged": {
+        "name": "Nongged",
+        "hp": 30,
+        "highest_hp": 130,
+        "atk": 49,
+        "coin": 1030,
+        "year": 5,
+        "sp_move": [
+            "A Cup of StrongBugs Coffee",
+            "Revision Sheet",
+            "Grinding All Night"
         ]
     }
 }

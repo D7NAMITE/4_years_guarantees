@@ -162,7 +162,7 @@ class SkillStore:
         try:
             int(buy_decision)
         except ValueError:
-            if buy_decision == 'x':
+            if buy_decision.lower() == 'x':
                 return True
             else:
                 for sec in range(3, 0, -1):
