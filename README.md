@@ -7,10 +7,15 @@
 The game outstading features are:
 - Turn-base RPG gameplay: The player will expirience a turn-base fight just similar to the fight system on Pokemon battle.
 - Story Prologue: The Prologue for the new player
-- Game text-tutorial: The text explaination for player when they play the game for the first time.
+- Text-tutorial and a tutorial round: The text explaination for player when they play the game for the first time. The player will met an easy level enemy in the first round to make them more used to to the game.
 - Game Save Management: The game can manage player data. It can create the new game or load an existed game. The game will also save the updated data after the player win a fight.
 
 ## Gameplay
+The game will be separated into two main phase the **Normal Phase** and the **Exam Phase**
+
+The **Normal Phase** is the phase of calm and preperation. Player will use this phase to upgrade their attributes and develope some skill to be ready for the upcoming fight.
+
+In the other hand, the **Exam Phase** is when the brawl battle start. The player will face of and fight the "Subject". There will be 4 subjects(Did not include the tutorial subject), one each year.
 
 ## Requiments
 For the game to run without any problem, you'll need:
@@ -27,4 +32,4 @@ For the game to run without any problem, you'll need:
 And for the best experience, I recommend you to:
 - Run the game on **Command Propmt** (You can directly access the game through 'main_game.py' file, just click it.)
 - Run the game in **Full-Screen**
-- Set the font to Courier New size 16 (the font effect the displaying effect).
+- Set the font to Courier New size 16.
