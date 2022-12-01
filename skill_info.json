@@ -8,19 +8,19 @@
     "Revision Sheet": {
         "name": "Revision Sheet",
         "cost": 30,
-        "effect": "+50% chances of getting 30 HP from enemy",
+        "effect": "50% chances of receiving 30 HP from enemy",
         "description": "Mock and guess, what will be in the test?"
     },
     "Grinding All Night": {
         "name": "Grinding All Night",
         "cost": 50,
-        "effect": "-25 HP ,75 Damage to enemy",
+        "effect": "-25 HP to player, 75 Damage to enemy",
         "description": "Study all night long. Tired but is it worth it?"
     },
     "Wish Me Luck": {
         "name": "Wish Me Luck",
         "cost": 50,
-        "effect": "20% chance 100 Damage to enemy, 80% chance +20% to intake 75 Damage",
+        "effect": "20% chance +100 Damage to enemy, 80% chance intake 75 Damage",
         "description": "Let's hope that today is my lucky day..."
     }
 }
