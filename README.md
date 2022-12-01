@@ -17,6 +17,8 @@ The **Normal Phase** is the phase of calm and preperation. Player will use this 
 
 In the other hand, the **Exam Phase** is when the brawl battle start. The player will face of and fight the "Subject". There will be 4 subjects(Did not include the tutorial subject), one each year.
 
+The game will loop between this two phases untill the player defeat the 4th year subject. 
+
 ## Requiments
 For the game to run without any problem, you'll need:
 - Python version 3.10 or later version
