@@ -34,4 +34,4 @@ For the game to run without any problem, you'll need:
 And for the best experience, I recommend you to:
 - Run the game on **Command Propmt** (You can directly access the game through 'main_game.py' file, just click it.)
 - Run the game in **Full-Screen**
-- Set the font to Courier New size 16.
+- Set the font to **Courier New** size 16.
