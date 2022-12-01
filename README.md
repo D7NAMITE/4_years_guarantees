@@ -50,3 +50,4 @@ The exam_phase.py consist of 1 class
 The main_menu.py consist of 2 classes and 1 function
 - MainMenu: The MainMenu class is the class that will display and operate the main menu part of the game
 - GaveSaveManager: The GameSaveManager class will manage the player data included, create a new player data, load an existed data, and save the updated data.
+- typeprint(function): The typeprint function will create an typewritter effect display.
