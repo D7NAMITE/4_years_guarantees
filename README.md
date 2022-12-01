@@ -37,4 +37,16 @@ And for the best experience, I recommend you to:
 - Set the font to **Courier New** size 16.
 
 ## Technical Details
-
+In this topic I'm going to cover about the details and function of each files and classes
+### character.py
+The character.p consist of 3 classes
+- Gauge class: The Gauge class is function as a 'Graphic' meter of the particular value. In the game the gauge will use for showing the player and enemy HP status.
+- Player class: The player class is the class that will contain and manipulate the player attributes.
+- Enemy class: The enemy class is the class that will contain and manipulate the enemy attributes.
+### exam_phase.py
+The exam_phase.py consist of 1 class
+- Fight: Fight class is a class to manipulate a fight phase of each round. The fight are also known as an "Exam Phase" when player need to slaughter the exam. It's also included the player and enemy action, special move, critical, and more.
+### main_menu.py
+The main_menu.py consist of 2 classes and 1 function
+- MainMenu: The MainMenu class is the class that will display and operate the main menu part of the game
+- GaveSaveManager: The GameSaveManager class will manage the player data included, create a new player data, load an existed data, and save the updated data.
