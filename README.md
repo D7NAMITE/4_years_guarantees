@@ -38,8 +38,10 @@ And for the best experience, I recommend you to:
 
 ## Technical Details
 In this topic I'm going to cover about the details and function of each files and classes
+### main_game
+The main_game.py doesn't contain any class. It's work as a game runner where player can access through this file.
 ### character.py
-The character.p consist of 3 classes
+The character.py consist of 3 classes
 - Gauge class: The Gauge class is function as a 'Graphic' meter of the particular value. In the game the gauge will use for showing the player and enemy HP status.
 - Player class: The player class is the class that will contain and manipulate the player attributes.
 - Enemy class: The enemy class is the class that will contain and manipulate the enemy attributes.
