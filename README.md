@@ -77,6 +77,3 @@ The main_menu.py consist of 2 classes and 1 function
 The normal_phase.py consist of 2 classes
 - Upgrade: The Upgrade class is the class that will operate and display the upgrading process.
 - SkillStore: The SkillStore class is the class that will operate and display the skill store and skill buying process.
-
-If there're further questions or query please contact me at:
-nanthawat.du@ku.th
