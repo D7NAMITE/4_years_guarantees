@@ -7,7 +7,7 @@ from main_menu import typeprint
 class Upgrade:
     """ The Upgrade class will manipulate and display the player attribute upgrading
     """
-    def __init__(self, player, player_db='player_db.json', game_script='game_script.csv', time_pt=5):
+    def __init__(self, player, player_db='player_db.json', game_script='game_script.csv', time_pt: int = 5):
         self.__player = player
         self.__player_db = player_db
         self.__game_script = game_script

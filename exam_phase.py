@@ -14,7 +14,6 @@ class Fight:
         self.__enemy = enemy
         with open('skill_info.json', 'r') as skill_file:
             self.__skill_info = json.load(skill_file)
-        self.__enemy_buff = 0
 
     @property
     def player(self):
@@ -230,6 +229,6 @@ class Fight:
     def enemy_attack(self):
         """The method that is work when enemy attack player
         """
-        dmg = self.__enemy.atk + self.__enemy_buff
+        dmg = self.__enemy.atk
         self.__player.hp -= dmg
         print(f'{self.__enemy.name} makes {dmg} Damage')
