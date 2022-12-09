@@ -5,6 +5,7 @@ class Gauge:
     """ The Gauge class is function as a 'Graphic' meter of the particular value.
     In the game the gauge will use for showing the player and enemy HP status.
     """
+
     def __init__(self, mag: float, highest: float, cap: float = 20):
         self.__mag = mag
         self.__highest = highest
@@ -56,6 +57,7 @@ class Gauge:
 class Player:
     """ The player class is the class that will contain and manipulate the player attributes
     """
+
     def __init__(self, name: str = 'Unknown Player', hp: float = 100, highest_hp: float = 100,
                  atk: float = 10, coin: float = 10, year: int = 0, sp_move=[]):
         self.__name = name
@@ -153,8 +155,9 @@ class Player:
 class Enemy:
     """ The enemy class is the class that will contain and manipulate the enemy attributes
         """
+
     def __init__(self, name: str = 'Unknown Hostile', hp: float = 100, highest_hp: float = 100,
-                 atk: float = 10, year: int = 0, heal_per_round=15, drop_coin=10):
+                 atk: float = 10, year: int = 0, heal_per_round: float = 15, drop_coin: float = 10):
         self.__name = name
         self.__hp = hp
         self.__atk = atk
