@@ -54,7 +54,7 @@ The game will loop between this two phases untill the player defeat the 4th year
 ## Technical Details
 In this topic I'm going to cover about the details and function of each files and classes
 
-### main_game
+### main_game.py
 The main_game.py doesn't contain any class. It's work as a game runner where player can access through this file.
 
 ### character.py
@@ -73,7 +73,7 @@ The main_menu.py consist of 2 classes and 1 function
 - GaveSaveManager: The GameSaveManager class will manage the player data included, create a new player data, load an existed data, and save the updated data.
 - typeprint(function): The typeprint function will create an typewritter effect display.
 
-### normal_phase
+### normal_phase.py
 The normal_phase.py consist of 2 classes
 - Upgrade: The Upgrade class is the class that will operate and display the upgrading process.
 - SkillStore: The SkillStore class is the class that will operate and display the skill store and skill buying process.
