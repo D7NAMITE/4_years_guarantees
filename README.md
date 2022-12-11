@@ -1,5 +1,7 @@
 # 4 Years guarantees the saga of escaping F
 
+GitHub link: https://github.com/D7NAMITE/4_years_guarantees
+
 ## Overview
 4 Years Guarantees the saga of escaping F is the Text-based RPG game, inspired by the bittersweet life of Software Engineering student. The player will be roled as the "4 year'er" the legendary freshmen who the saga manifest you to dominate all the subjects. The player must defeat all the exam to held the title of "4 years guarantees".
 
