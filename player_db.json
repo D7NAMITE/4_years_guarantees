@@ -13,18 +13,6 @@
             "Revision Sheet"
         ]
     },
-    "Drew": {
-        "name": "Drew",
-        "hp": 35,
-        "highest_hp": 130,
-        "atk": 28,
-        "coin": 30,
-        "year": 3,
-        "sp_move": [
-            "A Cup of StrongBugs Coffee",
-            "Revision Sheet"
-        ]
-    },
     "Nongged": {
         "name": "Nongged",
         "hp": 30,
@@ -38,22 +26,13 @@
             "Grinding All Night"
         ]
     },
-    "Ryu": {
-        "name": "Ryu",
+    "Joe": {
+        "name": "Joe",
         "hp": 100,
         "highest_hp": 100,
         "atk": 10,
-        "coin": 0,
-        "year": 0,
-        "sp_move": []
-    },
-    "Booooo": {
-        "name": "Booooo",
-        "hp": 100,
-        "highest_hp": 100,
-        "atk": 10,
-        "coin": 0,
-        "year": 0,
+        "coin": 10,
+        "year": 1,
         "sp_move": []
     }
 }
