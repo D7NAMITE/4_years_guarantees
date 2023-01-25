@@ -12,10 +12,10 @@ For the game to run without any problem, you'll need:
 - player_db.json file
 - skill_info.json file
 - enemy_db.json file
-- time Module (Should be available as built-in Module) | command: time.sleep(sec)
-- random Module (Should be available as built-in Module) | command: random.randint()
-- os Module (Should be available as built-in Module) | command: os.system('cls')
-- sys Module (Should be available as built-in Module) | command: sys.stdout.write(), sys.flush()
+- time Module (Should be available as built-in Module) | command: ```time.sleep(sec)```
+- random Module (Should be available as built-in Module) | command: ```random.randint()```
+- os Module (Should be available as built-in Module) | command: ```os.system('cls')```
+- sys Module (Should be available as built-in Module) | command: ```sys.stdout.write(), sys.flush()```
 
 And for the best experience, I recommend you to:
 - Run the game on **Command Propmt** (You can directly access the game through 'main_game.py' file, just click it.)
